@@ -1,7 +1,7 @@
 
     /**
 {% block phpdoc_method_header %}
-     * Finds and displays a {{ entity }} entity.
+     * {{ entity }}詳細
 {% endblock phpdoc_method_header %}
      *
 {% block phpdoc_method_annotations %}
@@ -25,8 +25,9 @@
             throw $this->createNotFoundException('Unable to find {{ entity }} entity.');
         }
 {% if 'delete' in actions %}
-
+{#
         $deleteForm = $this->createDeleteForm($id);
+#}
 {% endif %}
 {% endblock method_body %}
 
@@ -35,14 +36,18 @@
         return array(
             'entity'      => $entity,
 {% if 'delete' in actions %}
+{#
             'delete_form' => $deleteForm->createView(),
+#}
 {% endif %}
         );
 {% else %}
         return $this->render('{{ bundle }}:{{ entity|replace({'\\': '/'}) }}:show.html.twig', array(
             'entity'      => $entity,
 {% if 'delete' in actions %}
+{#
             'delete_form' => $deleteForm->createView(),
+#}
 {%- endif %}
         ));
 {% endif %}

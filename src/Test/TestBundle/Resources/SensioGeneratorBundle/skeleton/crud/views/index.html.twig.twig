@@ -6,16 +6,13 @@
 {{ "{% block body -%}" }}
     <h1>{{ entity }} list</h1>
 
+<form action="{{ "{{ path('" ~ route_name_prefix ~ "') }}" }}" novalidate method="post" {{ "{{ form_enctype(form) }}" }} name="{{ route_name_prefix }}_list">
+    {{ "{{ pdp_pager_hidden_render(pager) }}" }}
     <table class="records_list">
         <thead>
             <tr>
-            {%- for field, metadata in fields %}
-
-                <th>{{ field|capitalize }}</th>
-
-            {%- endfor %}
-
-                <th>Actions</th>
+                {{ "{{ pdp_pager_column_render(pager) }}" }}
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -50,6 +47,9 @@
         {{ '{% endfor %}' }}
         </tbody>
     </table>
+    {{ "{{ pdp_pager_selector_render(pager) }}" }}
+    {{ "{{ pdp_pager_pagesize_render(pager) }}" }}
+</form>
 
     {% if 'new' in actions %}
     <ul>

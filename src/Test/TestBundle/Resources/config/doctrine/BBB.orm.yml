@@ -1,0 +1,19 @@
+Test\TestBundle\Entity\BBB:
+    type: entity
+    indexes: {  }
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany: {  }
+    manyToOne: {  }
+    manyToMany:
+        aaas:
+            targetEntity: AAA
+            mappedBy: bbbs

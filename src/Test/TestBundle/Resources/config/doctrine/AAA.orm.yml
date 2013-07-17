@@ -1,0 +1,27 @@
+Test\TestBundle\Entity\AAA:
+    type: entity
+    indexes: {  }
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: true
+    oneToMany: {  }
+    manyToOne: {  }
+    manyToMany:
+        bbbs:
+            targetEntity: BBB
+            inversedBy: aaas
+            joinTable:
+                name: aaas_bbbs
+                joinColumns:
+                    id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    id:
+                        referencedColumnName: id

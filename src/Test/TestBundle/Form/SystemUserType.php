@@ -6,28 +6,24 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class TBDepartmentType extends AbstractType
+class SystemUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Name')
-            ->add('Name2')
-            ->add('SortNo')
-            ->add('DeleteFlug')
-            ->add('CreatedDatetime')
+            ->add('email')
         ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Test\TestBundle\Entity\TBDepartment'
+            'data_class' => 'Test\TestBundle\Entity\SystemUser'
         ));
     }
 
     public function getName()
     {
-        return 'test_testbundle_tbdepartmenttype';
+        return 'test_testbundle_systemusertype';
     }
 }

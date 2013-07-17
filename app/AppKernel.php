@@ -17,6 +17,10 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Test\TestBundle\TestTestBundle(),
+            new Arte\Ober2doctrineBundle\ArteOber2doctrineBundle(),//Ober2doctrine
+            new pingdecopong\FormFreezeBundle\pingdecopongFormFreezeBundle(),//FormFreeze
+            new pingdecopong\PagerBundle\pingdecopongPagerBundle(),//Pager
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
